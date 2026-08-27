@@ -22,7 +22,7 @@ export const homeLabs = [
     specs: "48 kHz · Mono · WebM/Opus · ~8.3 chunks/s",
     report: {
       href: "/lab/001",
-      label: "OPEN TECHNICAL REPORT →",
+      label: "OPEN TECHNICAL REPORT",
     },
     image: "/images/bg 1.png",
   },
