@@ -62,82 +62,11 @@ export function ProgressSection() {
 
           {/* Cards */}
           {cards.map((card) => (
-            <div 
+            <ProgressCard
               key={card.id} 
-              className="w-[85vw] md:w-[800px] lg:w-[900px] h-auto min-h-[480px] md:h-[600px] md:min-h-0 flex-shrink-0 bg-[#0F0F0F] rounded-[32px] flex flex-col md:flex-row p-6 md:p-8 gap-6 md:gap-10 relative group transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]"
-              style={{
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.08), inset 0 -1px 1px rgba(255,255,255,0.02)",
-                border: "1px solid rgba(255,255,255,0.06)"
-              }}
-            >
-              {/* Subtle top-left glare */}
-              <div className="absolute inset-0 rounded-[32px] pointer-events-none bg-gradient-to-br from-white/[0.04] to-transparent" />
-
-              {/* Left: Image / Placeholder */}
-              <div 
-                className={`w-full md:w-1/2 relative overflow-hidden flex items-center justify-center ${
-                  card.image 
-                    ? "h-[220px] md:h-full md:bg-[#050505] md:rounded-[24px]" 
-                    : "hidden md:flex h-full bg-[#050505] rounded-[24px]"
-                }`}
-                style={!card.image ? {
-                  boxShadow: "inset 0 10px 40px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.03)"
-                } : {}}
-              >
-                {card.image ? (
-                  <>
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-contain md:object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Inner shadow/vignette to blur and soften the edges of the cropped image */}
-                    <div 
-                      className="absolute inset-0 z-10 pointer-events-none rounded-[24px]"
-                      style={{ boxShadow: "inset 0 0 60px 20px #050505" }}
-                    />
-                  </>
-                ) : (
-                  <>
-                    {/* Elegant subtle pattern */}
-                    <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-                    <span className="relative z-10 text-[#444] font-[family-name:var(--font-oliveira)] text-sm md:text-base tracking-widest uppercase shadow-black drop-shadow-md">Image Space</span>
-                  </>
-                )}
-                {/* Hover shine */}
-                <div className="absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              </div>
-
-              {/* Right: Content */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center relative z-10 py-4 md:pr-4">
-                <div className="flex items-center gap-3 mb-8 md:mb-10">
-                  <div 
-                    className={`px-4 py-1.5 text-[11px] font-bold tracking-widest rounded-full border uppercase shadow-lg ${card.statusColor}`}
-                    style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.3)" }}
-                  >
-                    {card.status}
-                  </div>
-                </div>
-
-                <h3 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.05] text-[#FAFAFA] mb-6 tracking-[-0.01em] drop-shadow-md">
-                  {card.title}
-                </h3>
-                
-                <p className="text-[#A0A0A0] text-[17px] md:text-[19px] leading-[1.6] font-light mb-8 max-w-[400px]">
-                  {card.text}
-                </p>
-
-                {card.subtext && (
-                  <div className="mt-auto">
-                    <div className="h-px w-full bg-white/[0.08] mb-6 shadow-[0_1px_0_rgba(0,0,0,0.8)]" />
-                    <p className="text-[#888] text-sm md:text-[15px] whitespace-pre-line font-light leading-relaxed">
-                      {card.subtext}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+              card={card}
+              className="w-[85vw] md:w-[800px] lg:w-[900px] md:h-[600px] md:min-h-0 flex-shrink-0"
+            />
           ))}
           
           {/* Outro space to ensure the last card isn't completely flush with the screen edge if not desired, 
@@ -159,56 +88,96 @@ export function ProgressSection() {
 
         <div className="flex flex-col gap-12 mt-4">
           {cards.map((card) => (
-            <div 
+            <ProgressCard
               key={`mobile-${card.id}`} 
-              className="w-full h-auto min-h-[480px] bg-[#0F0F0F] rounded-[32px] flex flex-col p-6 gap-6 relative"
-              style={{
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.08), inset 0 -1px 1px rgba(255,255,255,0.02)",
-                border: "1px solid rgba(255,255,255,0.06)"
-              }}
-            >
-              {card.image && (
-                <div className="w-full aspect-[4/3] sm:aspect-video relative overflow-hidden flex items-center justify-center -mt-2 rounded-[20px] bg-[#050505]">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover opacity-90"
-                  />
-                </div>
-              )}
-
-              <div className="w-full flex flex-col justify-center relative z-10 py-2">
-                <div className="flex items-center gap-3 mb-8">
-                  <div 
-                    className={`px-4 py-1.5 text-[11px] font-bold tracking-widest rounded-full border uppercase shadow-lg ${card.statusColor}`}
-                    style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.3)" }}
-                  >
-                    {card.status}
-                  </div>
-                </div>
-
-                <h3 className="font-[family-name:var(--font-oliveira)] text-3xl leading-[1.05] text-[#FAFAFA] mb-6 tracking-[-0.01em] drop-shadow-md">
-                  {card.title}
-                </h3>
-                
-                <p className="text-[#A0A0A0] text-[17px] leading-[1.6] font-light mb-8">
-                  {card.text}
-                </p>
-
-                {card.subtext && (
-                  <div className="mt-auto">
-                    <div className="h-px w-full bg-white/[0.08] mb-6 shadow-[0_1px_0_rgba(0,0,0,0.8)]" />
-                    <p className="text-[#888] text-sm whitespace-pre-line font-light leading-relaxed">
-                      {card.subtext}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+              card={card}
+              className="w-full"
+            />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+type ProgressCardData = (typeof cards)[number];
+
+function ProgressCard({ card, className }: { card: ProgressCardData; className?: string }) {
+  return (
+    <div
+      className={`h-auto min-h-[480px] bg-[#0F0F0F] rounded-[32px] flex flex-col md:flex-row p-6 md:p-8 gap-6 md:gap-10 relative group transition-all duration-700 md:hover:-translate-y-2 md:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] ${className || ""}`}
+      style={{
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.08), inset 0 -1px 1px rgba(255,255,255,0.02)",
+        border: "1px solid rgba(255,255,255,0.06)"
+      }}
+    >
+      {/* Subtle top-left glare */}
+      <div className="hidden md:block absolute inset-0 rounded-[32px] pointer-events-none bg-gradient-to-br from-white/[0.04] to-transparent" />
+
+      {/* Left: Image / Placeholder */}
+      <div
+        className={`w-full md:w-1/2 relative overflow-hidden flex items-center justify-center ${
+          card.image
+            ? "aspect-[4/3] sm:aspect-video -mt-2 rounded-[20px] bg-[#050505] md:h-full md:aspect-auto md:mt-0 md:rounded-[24px]"
+            : "hidden md:flex h-full bg-[#050505] rounded-[24px]"
+        }`}
+        style={!card.image ? {
+          boxShadow: "inset 0 10px 40px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.03)"
+        } : {}}
+      >
+        {card.image ? (
+          <>
+            <Image
+              src={card.image}
+              alt={card.title}
+              fill
+              className="object-cover opacity-90 transition-transform duration-700 md:group-hover:scale-105"
+            />
+            {/* Inner shadow/vignette to blur and soften the edges of the cropped image */}
+            <div
+              className="hidden md:block absolute inset-0 z-10 pointer-events-none rounded-[24px]"
+              style={{ boxShadow: "inset 0 0 60px 20px #050505" }}
+            />
+          </>
+        ) : (
+          <>
+            {/* Elegant subtle pattern */}
+            <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+            <span className="relative z-10 text-[#444] font-[family-name:var(--font-oliveira)] text-sm md:text-base tracking-widest uppercase shadow-black drop-shadow-md">Image Space</span>
+          </>
+        )}
+        {/* Hover shine */}
+        <div className="hidden md:block absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      </div>
+
+      {/* Right: Content */}
+      <div className="w-full flex flex-col justify-center relative z-10 py-2 md:w-1/2 md:py-4 md:pr-4">
+        <div className="flex items-center gap-3 mb-8 md:mb-10">
+          <div
+            className={`px-4 py-1.5 text-[11px] font-bold tracking-widest rounded-full border uppercase shadow-lg ${card.statusColor}`}
+            style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.3)" }}
+          >
+            {card.status}
+          </div>
+        </div>
+
+        <h3 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.05] text-[#FAFAFA] mb-6 tracking-[-0.01em] drop-shadow-md">
+          {card.title}
+        </h3>
+
+        <p className="text-[#A0A0A0] text-[17px] md:text-[19px] leading-[1.6] font-light mb-8 md:max-w-[400px]">
+          {card.text}
+        </p>
+
+        {card.subtext && (
+          <div className="mt-auto">
+            <div className="h-px w-full bg-white/[0.08] mb-6 shadow-[0_1px_0_rgba(0,0,0,0.8)]" />
+            <p className="text-[#888] text-sm md:text-[15px] whitespace-pre-line font-light leading-relaxed">
+              {card.subtext}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
