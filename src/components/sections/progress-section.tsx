@@ -4,35 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 
-const cards = [
-  {
-    id: 1,
-    title: "APPLIED RESEARCH + EVALS",
-    status: "ACTIVE",
-    statusColor: "text-white border-white/30 bg-white/10",
-    text: "We’re studying current real-time systems and building our own evaluations around response timing, interruptions, naturalness, state continuity, tool completion and inference cost.",
-    subtext: null,
-    image: "/images/adoflabs-applied-research-under-500kb.webp"
-  },
-  {
-    id: 2,
-    title: "REALTIME BASELINE A1",
-    status: "COMPLETED",
-    statusColor: "text-[#FAFAFA] border-white/20 bg-white/10",
-    text: "Built and instrumented the first live audio transport path.",
-    subtext: "320 ms → ~100–121 ms\nObserved round-trip latency across successive runs.",
-    image: "/images/voice_baseline_A1.webp"
-  },
-  {
-    id: 3,
-    title: "REALTIME BASELINE A2",
-    status: "IN TESTING",
-    statusColor: "text-amber-400 border-amber-400/30 bg-amber-400/10",
-    text: "Added speech understanding to the same measured pipeline.",
-    subtext: "The first integration exposed an empty-transcription failure. We’re isolating it before adding another layer.",
-    image: "/images/voice_applied_research_A2.webp"
-  }
-];
+import { progressCards, type ProgressCardContent } from "@/content/home/progress";
 
 export function ProgressSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -61,7 +33,7 @@ export function ProgressSection() {
           </div>
 
           {/* Cards */}
-          {cards.map((card) => (
+          {progressCards.map((card) => (
             <ProgressCard
               key={card.id} 
               card={card}
@@ -87,7 +59,7 @@ export function ProgressSection() {
         </div>
 
         <div className="flex flex-col gap-12 mt-4">
-          {cards.map((card) => (
+          {progressCards.map((card) => (
             <ProgressCard
               key={`mobile-${card.id}`} 
               card={card}
@@ -100,9 +72,7 @@ export function ProgressSection() {
   );
 }
 
-type ProgressCardData = (typeof cards)[number];
-
-function ProgressCard({ card, className }: { card: ProgressCardData; className?: string }) {
+function ProgressCard({ card, className }: { card: ProgressCardContent; className?: string }) {
   return (
     <div
       className={`h-auto min-h-[480px] bg-[#0F0F0F] rounded-[32px] flex flex-col md:flex-row p-6 md:p-8 gap-6 md:gap-10 relative group transition-all duration-700 md:hover:-translate-y-2 md:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] ${className || ""}`}
