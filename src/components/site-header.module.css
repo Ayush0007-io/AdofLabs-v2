@@ -1,0 +1,233 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(10, 10, 9, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* DESKTOP STYLES */
+.desktopHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  transition: padding 0.3s ease;
+}
+
+.header.scrolled .desktopHeader {
+  padding: 8px 24px;
+}
+
+.desktopLogo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.desktopLogo img {
+  display: block;
+  width: 130px;
+  height: auto;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.desktopNavLink {
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.desktopCta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* MOBILE DOES NOT EXIST ON DESKTOP */
+.mobileHeader {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .desktopHeader {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: max(16px, env(safe-area-inset-top)) 20px 16px;
+    pointer-events: auto;
+  }
+
+  .mobileLogo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+
+  .mobileLogo img {
+    display: block;
+    width: 170px;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+  }
+
+  .hamburger {
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    display: block;
+    background: #ffffff;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobileHeader {
+    padding-left: 18px;
+    padding-right: 16px;
+  }
+
+  .mobileLogo img {
+    width: 155px;
+  }
+}
+
+/* MOBILE OVERLAY */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  width: 100%;
+  height: 100dvh;
+  background: #080808;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: max(20px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobileMenuLogo img {
+  display: block;
+  width: 155px;
+  height: auto;
+  overflow: visible;
+}
+
+.closeButton {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.mobileNav a {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(20px, 6vw, 28px);
+  line-height: 1.1;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobileCta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 22px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1025px) {
+  .mobileOverlay {
+    display: none !important;
+  }
+}
