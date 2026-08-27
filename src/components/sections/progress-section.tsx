@@ -6,6 +6,12 @@ import Image from "next/image";
 
 import { progressCards, type ProgressCardContent } from "@/content/home/progress";
 
+const statusStyles = {
+  ACTIVE: "text-white border-white/30 bg-white/10",
+  COMPLETED: "text-[#FAFAFA] border-white/20 bg-white/10",
+  "IN TESTING": "text-amber-400 border-amber-400/30 bg-amber-400/10",
+} as const;
+
 export function ProgressSection() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -124,7 +130,7 @@ function ProgressCard({ card, className }: { card: ProgressCardContent; classNam
       <div className="w-full flex flex-col justify-center relative z-10 py-2 md:w-1/2 md:py-4 md:pr-4">
         <div className="flex items-center gap-3 mb-8 md:mb-10">
           <div
-            className={`px-4 py-1.5 text-[11px] font-bold tracking-widest rounded-full border uppercase shadow-lg ${card.statusColor}`}
+            className={`px-4 py-1.5 text-[11px] font-bold tracking-widest rounded-full border uppercase shadow-lg ${statusStyles[card.status]}`}
             style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.3)" }}
           >
             {card.status}
