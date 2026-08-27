@@ -82,12 +82,12 @@ export function LabsSection() {
                     {lab.specs}
                   </div>
 
-                  {lab.linkText && lab.linkUrl && (
+                  {lab.report && (
                     <Link
-                      href={lab.linkUrl}
+                      href={lab.report.href}
                       className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-[#FAFAFA] hover:text-[#A0A0A0] transition-colors uppercase group/link"
                     >
-                      {lab.linkText}
+                      {lab.report.label}
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover/link:translate-x-1">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
