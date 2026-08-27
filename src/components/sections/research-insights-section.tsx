@@ -1,36 +1,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { researchArticles } from "@/content/research/articles";
 
-const articles = [
-  {
-    id: 1,
-    date: "01 — RESEARCH NOTE",
-    title: "When real-time interaction becomes a systems problem",
-    description: "What latency, state, tool execution, verification and compute reveal when intelligence has to remain present rather than respond one turn at a time.",
-    image: "/images/r1.png",
-    linkText: "READ NOTE →",
-    link: "#"
-  },
-  {
-    id: 2,
-    date: "02 — ENGINEERING INSIGHT",
-    title: "What measuring the live speech stack taught us",
-    description: "Lessons from instrumenting capture, transport and speech understanding — and why perceived speed is different from measured system latency.",
-    image: "/images/r2.png",
-    linkText: "READ INSIGHT →",
-    link: "#"
-  },
-  {
-    id: 3,
-    date: "03 — RESEARCH DIRECTION",
-    title: "Should intelligence run on more than one clock?",
-    description: "Exploring architectures where perception, speech, reasoning, action and learning operate at different timescales instead of forcing every process through the same computational rhythm.",
-    image: "/images/r3.png",
-    linkText: "EXPLORE RESEARCH →",
-    link: "#"
-  }
-];
+const homepageArticles = researchArticles.slice(0, 3);
+
+const ctaLabels: Record<string, string> = {
+  "RESEARCH NOTE": "READ NOTE →",
+  "ENGINEERING INSIGHT": "READ INSIGHT →",
+  "RESEARCH DIRECTION": "EXPLORE RESEARCH →",
+};
 
 export function ResearchInsightsSection() {
   return (
@@ -40,10 +19,10 @@ export function ResearchInsightsSection() {
       </h2>
 
       <div className="w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        {articles.map((article) => (
+        {homepageArticles.map((article) => (
           <Link 
             key={article.id} 
-            href={article.link}
+            href="#"
             className="flex flex-col group cursor-pointer"
           >
             {/* Image with Bottom Fade */}
@@ -61,17 +40,17 @@ export function ResearchInsightsSection() {
             {/* Text Content */}
             <div className="flex flex-col px-2 flex-grow">
               <span className="text-[#888888] text-xs font-bold tracking-widest uppercase mb-3">
-                {article.date}
+                {article.id} — {article.type}
               </span>
               <h3 className="font-[family-name:var(--font-oliveira)] text-[#FAFAFA] text-2xl font-medium leading-tight mb-4 group-hover:text-[#A0A0A0] transition-colors duration-300">
                 {article.title}
               </h3>
               <p className="text-[#A0A0A0] text-sm leading-relaxed font-light mb-6">
-                {article.description}
+                {article.summary}
               </p>
               <div className="mt-auto mb-2">
                 <span className="text-xs font-bold tracking-widest text-[#FAFAFA] group-hover:text-[#A0A0A0] transition-colors duration-300 uppercase">
-                  {article.linkText}
+                  {ctaLabels[article.type]}
                 </span>
               </div>
             </div>
