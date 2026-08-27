@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { SiteHeader } from "@/components/layout/site-header/site-header";
-import { FooterCtaSection } from "@/components/sections/footer-cta-section";
+import { SiteFooter } from "@/components/layout/site-footer/site-footer";
 import "./globals.css";
 
 const cambon = localFont({
@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${cambon.variable} ${oliveira.variable}`}>
         <SiteHeader />
         {children}
-        <FooterCtaSection />
+        <SiteFooter />
       </body>
     </html>
   );

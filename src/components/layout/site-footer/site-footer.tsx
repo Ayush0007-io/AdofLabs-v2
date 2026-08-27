@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function FooterCtaSection() {
+export function SiteFooter() {
   return (
     <footer className="w-full bg-[var(--background)] text-[#FAFAFA] relative overflow-hidden flex flex-col items-center">
       <div className="w-full max-w-[1560px] px-6 md:px-12 lg:px-24 mx-auto w-full relative z-10 pt-20 md:pt-24 lg:pt-32 flex flex-col">
