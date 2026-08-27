@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-import styles from "../../site-header.module.css";
+import styles from "./site-header.module.css";
 
 const NAV_LINKS = [
   { name: "RESEARCH & INSIGHTS", href: "/research" },
