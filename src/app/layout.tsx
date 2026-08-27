@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { SiteHeader } from "@/components/site-header";
+import { SiteHeader } from "@/components/layout/site-header/site-header";
 import { FooterCtaSection } from "@/components/sections/footer-cta-section";
 import "./globals.css";
 
