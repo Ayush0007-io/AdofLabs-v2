@@ -125,10 +125,10 @@ export function SiteFooter() {
             <Link href="/terms" className={styles.utilityLink}>
               Terms
             </Link>
-            <Link href="https://linkedin.com" className={styles.utilityLink}>
+            <Link href="https://www.linkedin.com/company/adof-labs/" className={styles.utilityLink}>
               LinkedIn
             </Link>
-            <Link href="https://x.com" className={styles.utilityLink}>
+            <Link href="https://x.com/Adoflabs" className={styles.utilityLink}>
               X
             </Link>
           </div>
