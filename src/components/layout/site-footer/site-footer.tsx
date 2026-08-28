@@ -1,10 +1,25 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import styles from "./site-footer.module.css";
 
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
+      <motion.div 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "0%" }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 70, 
+          damping: 15,
+          mass: 1,
+          bounce: 0.4
+        }}
+        className={styles.inner}
+      >
         
         {/* TOP COMPOSITION: Asymmetric 12-col grid */}
         <div className={styles.topGrid}>
@@ -119,16 +134,27 @@ export function SiteFooter() {
           </div>
         </div>
 
-      </div>
+      </motion.div>
 
       {/* OVERSIZED ADOFLABS WORDMARK */}
       <div 
         aria-hidden="true" 
         className={styles.wordmarkContainer}
       >
-        <span className={styles.wordmark}>
+        <motion.span 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0%" }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 50, 
+            damping: 20,
+            delay: 0.1
+          }}
+          className={styles.wordmark}
+        >
           ADOF LABS
-        </span>
+        </motion.span>
       </div>
     </footer>
   );

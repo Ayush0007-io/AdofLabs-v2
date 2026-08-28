@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { SiteHeader } from "@/components/layout/site-header/site-header";
 import { SiteFooter } from "@/components/layout/site-footer/site-footer";
+import { SplashScreen } from "@/components/splash-screen";
+import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import "./globals.css";
 
 const cambon = localFont({
@@ -73,9 +75,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${cambon.variable} ${oliveira.variable}`}>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <SmoothScroll>
+          <SplashScreen />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </SmoothScroll>
       </body>
     </html>
   );

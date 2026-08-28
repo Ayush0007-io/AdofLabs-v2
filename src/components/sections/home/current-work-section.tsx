@@ -1,14 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export function CurrentWorkSection() {
   return (
-    <section className="relative z-10 w-full bg-[var(--background)] py-16 md:py-24 flex justify-center text-[#FAFAFA]">
+    <section className="relative z-10 w-full bg-[var(--background)] py-16 md:py-24 flex justify-center text-[#FAFAFA] overflow-hidden">
       <div className="w-full max-w-[1200px] px-6 md:px-12">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
           
           {/* Left: Image */}
-          <div className="relative w-full md:w-[55%] flex items-start justify-center group">
+          <motion.div 
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full md:w-[55%] flex items-start justify-center group"
+          >
             <Image
               src="/images/what we build.png"
               alt="What we build"
@@ -19,10 +28,16 @@ export function CurrentWorkSection() {
               className="w-full scale-[1.15] origin-top h-auto object-contain transition-transform duration-700 group-hover:scale-[1.22]"
               priority
             />
-          </div>
+          </motion.div>
 
           {/* Right: Content */}
-          <div className="w-full md:w-[45%] flex flex-col justify-start pt-2 md:pt-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full md:w-[45%] flex flex-col justify-start pt-2 md:pt-4"
+          >
             <h2 className="font-[family-name:var(--font-oliveira)] text-[2.25rem] md:text-[2.75rem] lg:text-[3.25rem] leading-[1.05] font-light tracking-[-0.02em] mb-10 text-[#FAFAFA]">
               We’re developing our own continuous model and runtime architecture.
             </h2>
@@ -44,7 +59,7 @@ export function CurrentWorkSection() {
                 </svg>
               </Link>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

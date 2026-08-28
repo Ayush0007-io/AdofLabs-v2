@@ -91,7 +91,11 @@ function ProgressCard({ card, className }: { card: ProgressCardContent; classNam
       <div className="hidden md:block absolute inset-0 rounded-[32px] pointer-events-none bg-gradient-to-br from-white/[0.04] to-transparent" />
 
       {/* Left: Image / Placeholder */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className={`w-full md:w-1/2 relative overflow-hidden flex items-center justify-center ${
           card.image
             ? "aspect-[4/3] sm:aspect-video -mt-2 rounded-[20px] bg-[#050505] md:h-full md:aspect-auto md:mt-0 md:rounded-[24px]"
@@ -124,10 +128,16 @@ function ProgressCard({ card, className }: { card: ProgressCardContent; classNam
         )}
         {/* Hover shine */}
         <div className="hidden md:block absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-      </div>
+      </motion.div>
 
       {/* Right: Content */}
-      <div className="w-full flex flex-col justify-center relative z-10 py-2 md:w-1/2 md:py-4 md:pr-4">
+      <motion.div 
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full flex flex-col justify-center relative z-10 py-2 md:w-1/2 md:py-4 md:pr-4"
+      >
         <div className="flex items-center gap-3 mb-8 md:mb-10">
           <div
             className={`px-4 py-1.5 text-[11px] font-bold tracking-widest rounded-full border uppercase shadow-lg ${statusStyles[card.status]}`}
@@ -153,7 +163,7 @@ function ProgressCard({ card, className }: { card: ProgressCardContent; classNam
             </p>
           </div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 }

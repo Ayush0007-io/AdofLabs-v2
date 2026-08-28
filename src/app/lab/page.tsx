@@ -1,5 +1,5 @@
-import { LabHero } from "@/components/sections/lab-hero";
-import { LabWorkSection } from "@/components/sections/lab-work-section";
+import { LabHero } from "@/components/sections/lab/lab-hero";
+import { LabWorkSection } from "@/components/sections/lab/lab-work-section";
 
 export default function LabPage() {
   return (

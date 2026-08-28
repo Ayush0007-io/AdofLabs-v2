@@ -1,7 +1,7 @@
-import { ProgressHero } from "@/components/sections/progress-hero";
-import { ProgressTimeline } from "@/components/sections/progress-timeline";
-import { ProgressReleases } from "@/components/sections/progress-releases";
-import { ProgressCompany } from "@/components/sections/progress-company";
+import { ProgressHero } from "@/components/sections/progress/progress-hero";
+import { ProgressTimeline } from "@/components/sections/progress/progress-timeline";
+import { ProgressReleases } from "@/components/sections/progress/progress-releases";
+import { ProgressCompany } from "@/components/sections/progress/progress-company";
 
 export default function ProgressPage() {
   return (

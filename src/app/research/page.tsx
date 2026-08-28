@@ -1,6 +1,6 @@
-import { InsightsHero } from "@/components/sections/insights-hero";
-import { ResearchFeaturedSection } from "@/components/sections/research-featured";
-import { ResearchListSection } from "@/components/sections/research-list";
+import { InsightsHero } from "@/components/sections/research/insights-hero";
+import { ResearchFeaturedSection } from "@/components/sections/home/research-featured";
+import { ResearchListSection } from "@/components/sections/research/research-list";
 
 export default function ResearchPage() {
   return (

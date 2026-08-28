@@ -10,10 +10,10 @@
 }
 
 .header.scrolled {
-  background: rgba(10, 10, 9, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(10, 10, 9, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* DESKTOP STYLES */
@@ -23,52 +23,70 @@
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 8px 24px;
   transition: padding 0.3s ease;
 }
 
 .header.scrolled .desktopHeader {
-  padding: 8px 24px;
+  padding: 4px 24px;
 }
 
 .desktopLogo {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.desktopLogo:hover {
+  transform: scale(1.02);
 }
 
 .desktopLogo img {
   display: block;
-  width: 130px;
+  width: 140px;
   height: auto;
 }
 
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .desktopNavLink {
-  color: white;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  transition: color 0.3s ease;
+}
+
+.desktopNavLink:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 .desktopCta {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   color: black;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: 9999px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.desktopCta:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
 /* MOBILE DOES NOT EXIST ON DESKTOP */

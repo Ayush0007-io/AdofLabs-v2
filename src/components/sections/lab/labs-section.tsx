@@ -1,25 +1,37 @@
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 import { homeLabs } from "@/content/home/labs";
 
 export function LabsSection() {
   return (
     <section className="relative z-10 w-full bg-[var(--background)] py-24 md:py-32 flex flex-col items-center">
-      <div className="w-full max-w-[1200px] px-6 md:px-12 mb-16 md:mb-24">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full max-w-[1200px] px-6 md:px-12 mb-16 md:mb-24"
+      >
         <h2 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-5xl text-[#FAFAFA] mb-6 tracking-tight">
           Built, tested, and released from our research.
         </h2>
         <p className="text-[#A0A0A0] text-lg md:text-xl font-light leading-relaxed max-w-[600px]">
           Reports, experiments, demos and systems that make our work inspectable.
         </p>
-      </div>
+      </motion.div>
 
       <div className="w-full border-t border-white/10">
-        {homeLabs.map((lab) => (
-          <div
+        {homeLabs.map((lab, index) => (
+          <motion.div
             key={lab.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="group relative w-full border-b border-white/10 overflow-hidden transition-colors duration-500"
           >
             {/* Background Image on Hover */}
@@ -97,7 +109,7 @@ export function LabsSection() {
 
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

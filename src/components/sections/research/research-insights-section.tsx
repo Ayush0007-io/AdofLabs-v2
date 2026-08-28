@@ -1,6 +1,8 @@
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 import { researchArticles } from "@/content/research/articles";
 
 const homepageArticles = researchArticles.slice(0, 3);
@@ -14,17 +16,29 @@ const ctaLabels: Record<string, string> = {
 export function ResearchInsightsSection() {
   return (
     <section className="relative z-10 w-full bg-[var(--background)] py-24 md:py-32 flex flex-col items-center">
-      <h2 className="font-[family-name:var(--font-oliveira)] text-4xl md:text-5xl text-[#FAFAFA] mb-16 text-center font-normal">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="font-[family-name:var(--font-oliveira)] text-4xl md:text-5xl text-[#FAFAFA] mb-16 text-center font-normal"
+      >
         Research and Insights
-      </h2>
+      </motion.h2>
 
       <div className="w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        {homepageArticles.map((article) => (
-          <Link 
-            key={article.id} 
-            href="#"
-            className="flex flex-col group cursor-pointer"
+        {homepageArticles.map((article, index) => (
+          <motion.div
+            key={article.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
+            <Link 
+              href="#"
+              className="flex flex-col group cursor-pointer h-full"
+            >
             {/* Image with Bottom Fade */}
             <div className="relative w-full aspect-[4/3] mb-6 rounded-t-2xl rounded-b-lg overflow-hidden">
               <Image
@@ -54,7 +68,8 @@ export function ResearchInsightsSection() {
                 </span>
               </div>
             </div>
-          </Link>
+            </Link>
+          </motion.div>
         ))}
       </div>
 

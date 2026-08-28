@@ -1,4 +1,4 @@
-import { InsightsHero } from "@/components/sections/insights-hero";
+import { InsightsHero } from "@/components/sections/research/insights-hero";
 
 export default function InsightsPage() {
   return (
