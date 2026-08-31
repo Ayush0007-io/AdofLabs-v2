@@ -16,7 +16,7 @@ export function CurrentWorkSection() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-15%" }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-[115%] -ml-[7.5%] md:w-[65%] md:ml-0 flex items-start justify-center group mb-16 md:mb-0 mt-8 md:mt-0"
+            className="relative w-full md:w-[60%] flex items-center justify-center group mb-12 md:mb-0 mt-4 md:mt-0"
           >
             <Image
               src="/images/what we build new.png"
@@ -24,8 +24,7 @@ export function CurrentWorkSection() {
               width={1600}
               height={1600}
               quality={100}
-              unoptimized
-              className="w-full h-auto object-contain scale-[1.3] md:scale-[1.4] origin-center md:origin-right transition-transform duration-700 group-hover:scale-[1.35] md:group-hover:scale-[1.45]"
+              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
               priority
             />
           </motion.div>
