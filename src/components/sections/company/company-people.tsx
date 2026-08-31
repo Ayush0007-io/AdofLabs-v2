@@ -38,7 +38,7 @@ export function CompanyPeople() {
             <div key={i} className="flex flex-col">
               <div className="w-full aspect-square mb-6 relative overflow-hidden flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 rounded-lg">
                 {person.image ? (
-                  <Image src={person.image} alt={person.name} fill className="object-contain" />
+                  <Image src={person.image} alt={person.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-contain" />
                 ) : (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#444]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 
 export function BentoGrid() {
   return (
@@ -113,11 +115,12 @@ export function BentoGrid() {
             {/* Animated Orb from user image */}
             <div className="absolute inset-0 flex justify-center items-center">
               <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] animate-[float_6s_ease-in-out_infinite] opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/images/sphere.jpg"
                   alt="Voice Orb"
-                  className="w-full h-full object-contain mix-blend-screen pointer-events-none"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain mix-blend-screen pointer-events-none"
                 />
               </div>
             </div>

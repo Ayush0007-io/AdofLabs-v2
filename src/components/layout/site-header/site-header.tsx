@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -90,7 +91,7 @@ export function SiteHeader() {
         {/* DESKTOP — RESTORE ORIGINAL WORKING DESIGN */}
         <div className={styles.desktopHeader}>
           <Link prefetch={true} href="/" className={styles.desktopLogo}>
-            <img src="/adoflogo (1).svg" alt="AdofLabs" />
+            <Image src="/adoflogo (1).svg" alt="AdofLabs" width={100} height={30} priority className="w-auto h-auto" />
           </Link>
 
           <nav
@@ -123,7 +124,7 @@ export function SiteHeader() {
             className={styles.mobileLogo}
             onClick={() => setMenuOpen(false)}
           >
-            <img src="/adoflogo (1).svg" alt="AdofLabs" />
+            <Image src="/adoflogo (1).svg" alt="AdofLabs" width={100} height={30} priority className="w-auto h-auto" />
           </Link>
 
           <button
@@ -158,7 +159,7 @@ export function SiteHeader() {
                 className={styles.mobileMenuLogo}
                 onClick={() => setMenuOpen(false)}
               >
-                <img src="/adoflogo (1).svg" alt="AdofLabs" />
+                <Image src="/adoflogo (1).svg" alt="AdofLabs" width={100} height={30} priority className="w-auto h-auto" />
               </Link>
 
               <button
