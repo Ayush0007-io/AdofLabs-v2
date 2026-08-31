@@ -7,23 +7,23 @@ import styles from "./site-footer.module.css";
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "0%" }}
-        transition={{ 
-          type: "spring", 
-          stiffness: 70, 
+        transition={{
+          type: "spring",
+          stiffness: 70,
           damping: 15,
           mass: 1,
           bounce: 0.4
         }}
         className={styles.inner}
       >
-        
+
         {/* TOP COMPOSITION: Asymmetric 12-col grid */}
         <div className={styles.topGrid}>
-          
+
           {/* LEFT NAVIGATION: ~5 cols */}
           <div className={styles.navigationColumn}>
             <nav className={styles.navigation}>
@@ -32,22 +32,22 @@ export function SiteFooter() {
               </span>
               <ul className={styles.navigationList}>
                 <li>
-                  <Link href="/research" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/research" className={styles.navigationLink}>
                     Research
                   </Link>
                 </li>
                 <li>
-                  <Link href="/lab" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/lab" className={styles.navigationLink}>
                     Lab
                   </Link>
                 </li>
                 <li>
-                  <Link href="/insights" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/insights" className={styles.navigationLink}>
                     Research & Insights
                   </Link>
                 </li>
                 <li>
-                  <Link href="/progress" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/progress" className={styles.navigationLink}>
                     Progress
                   </Link>
                 </li>
@@ -60,17 +60,17 @@ export function SiteFooter() {
               </span>
               <ul className={styles.navigationList}>
                 <li>
-                  <Link href="/company" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/company" className={styles.navigationLink}>
                     Company
                   </Link>
                 </li>
                 <li>
-                  <Link href="/join" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/join" className={styles.navigationLink}>
                     Join
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className={styles.navigationLink}>
+                  <Link prefetch={true} href="/contact" className={styles.navigationLink}>
                     Contact
                   </Link>
                 </li>
@@ -87,19 +87,19 @@ export function SiteFooter() {
               We’re looking for researchers, engineers and collaborators who want to work on them.
             </p>
             <div>
-              <Link 
+              <Link prefetch={true}
                 href="/join"
                 className={styles.ctaButton}
               >
                 JOIN THE MISSION
-                <svg 
-                  width="18" 
-                  height="18" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="1.5" 
-                  strokeLinecap="round" 
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                   className={styles.ctaIcon}
                 >
@@ -119,16 +119,16 @@ export function SiteFooter() {
             © 2026 AdofLabs. All rights reserved.
           </p>
           <div className={styles.utilityLinks}>
-            <Link href="/privacy" className={styles.utilityLink}>
+            <Link prefetch={true} href="/privacy" className={styles.utilityLink}>
               Privacy
             </Link>
-            <Link href="/terms" className={styles.utilityLink}>
+            <Link prefetch={true} href="/terms" className={styles.utilityLink}>
               Terms
             </Link>
-            <Link href="https://www.linkedin.com/company/adof-labs/" className={styles.utilityLink}>
+            <Link prefetch={true} href="https://www.linkedin.com/company/adof-labs/" className={styles.utilityLink}>
               LinkedIn
             </Link>
-            <Link href="https://x.com/Adoflabs" className={styles.utilityLink}>
+            <Link prefetch={true} href="https://x.com/Adoflabs" className={styles.utilityLink}>
               X
             </Link>
           </div>
@@ -137,17 +137,17 @@ export function SiteFooter() {
       </motion.div>
 
       {/* OVERSIZED ADOFLABS WORDMARK */}
-      <div 
-        aria-hidden="true" 
+      <div
+        aria-hidden="true"
         className={styles.wordmarkContainer}
       >
-        <motion.span 
+        <motion.span
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0%" }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 50, 
+          transition={{
+            type: "spring",
+            stiffness: 50,
             damping: 20,
             delay: 0.1
           }}

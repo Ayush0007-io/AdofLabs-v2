@@ -7,10 +7,10 @@ export function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Hide splash screen after a shorter delay to make it snappier
+    // 500ms duration for the splash to appear on every page transition as requested
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1200);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -21,12 +21,14 @@ export function SplashScreen() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ y: 0 }}
-          exit={{ y: "-100%" }}
-          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-[#111111] text-[#FAFAFA]"
+          // Use only transform (y) and opacity for GPU acceleration, avoiding layout thrashing on low-end devices
+          initial={{ y: 0, opacity: 1 }}
+          exit={{ y: "-100%", opacity: 1 }}
+          // Silky smooth cinematic curve
+          transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-[#111111] text-[#FAFAFA] pointer-events-none"
         >
-          <motion.div 
+          <motion.div
             className="font-[family-name:var(--font-serif)] text-4xl md:text-5xl font-light tracking-wide flex items-start"
             initial="hidden"
             animate="show"
@@ -34,7 +36,7 @@ export function SplashScreen() {
               hidden: { opacity: 0 },
               show: {
                 opacity: 1,
-                transition: { staggerChildren: 0.06, delayChildren: 0.1 }
+                transition: { staggerChildren: 0.04, delayChildren: 0.1 }
               }
             }}
           >
@@ -42,8 +44,9 @@ export function SplashScreen() {
               <motion.span
                 key={i}
                 variants={{
-                  hidden: { opacity: 0, y: 10 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                  // Only animate opacity and Y translation (GPU optimized)
+                  hidden: { opacity: 0, y: 15 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
                 }}
               >
                 {char}
@@ -52,7 +55,7 @@ export function SplashScreen() {
             <motion.sup
               variants={{
                 hidden: { opacity: 0 },
-                show: { opacity: 1, transition: { duration: 0.5, delay: 0.6 } }
+                show: { opacity: 1, transition: { duration: 0.4, delay: 0.3 } }
               }}
               className="text-lg md:text-xl ml-1 mt-1"
             >

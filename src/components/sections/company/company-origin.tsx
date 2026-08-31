@@ -9,17 +9,17 @@ export function CompanyOrigin() {
           <div className="w-full md:w-3/5 flex flex-col">
             <span className="font-mono text-[#666] text-[11px] tracking-[0.2em] uppercase mb-8 block">02 / Our Origin</span>
             <h2 className="font-[family-name:var(--font-oliveira)] text-[28px] md:text-[36px] lg:text-[42px] text-[#FAFAFA] leading-[1.15] tracking-tight mb-8">
-              We didn&apos;t start with a research thesis. We arrived at one.
+              At some point, fixing the application stopped feeling like the real problem.
             </h2>
             <div className="flex flex-col gap-6 text-[#A0A0A0] text-[15px] md:text-[17px] font-light leading-[1.6]">
               <p>
-                Our early work was applied AI engineering. We built systems around real business workflows, where intelligence had to interact with people, use software and produce outcomes rather than simply generate answers.
+                The systems kept getting better, but the difficult parts started moving underneath the product itself. State changed while work was still running. Tools completed without guaranteeing the intended outcome. More capability created more coordination, compute and reliability problems.
               </p>
               <p>
-                The closer we got to real deployment, the more the same problems appeared. Faster models alone did not solve interaction latency. Better reasoning did not solve state. Tool access did not guarantee successful execution. Adding more capability also increased infrastructure and inference cost.
+                We could keep patching each application separately. Or we could start asking what kind of underlying system would make those problems easier to solve in the first place.
               </p>
               <p className="text-[#FAFAFA] font-normal border-l-2 border-white/20 pl-5 ml-1 mt-2">
-                What initially looked like a collection of product problems began to look like one systems problem. That realization changed the direction of AdofLabs: from applying existing intelligence to investigating how the underlying intelligence and runtime should work.
+                That question changed the direction of AdofLabs.
               </p>
             </div>
           </div>

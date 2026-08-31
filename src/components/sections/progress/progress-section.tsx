@@ -27,7 +27,7 @@ export function ProgressSection() {
       {/* Desktop View */}
       <div className="hidden md:flex sticky top-0 h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-8 px-6 md:px-12 lg:px-24 w-max">
-          
+
           {/* Intro Text for the section */}
           <div className="w-[300px] md:w-[400px] flex-shrink-0 flex flex-col justify-center pr-10">
             <h2 className="font-[family-name:var(--font-oliveira)] text-4xl md:text-5xl text-[#FAFAFA] mb-6">
@@ -41,13 +41,13 @@ export function ProgressSection() {
           {/* Cards */}
           {progressCards.map((card) => (
             <ProgressCard
-              key={card.id} 
+              key={card.id}
               card={card}
               className="w-[85vw] md:w-[800px] lg:w-[900px] md:h-[600px] md:min-h-0 flex-shrink-0"
             />
           ))}
-          
-          {/* Outro space to ensure the last card isn't completely flush with the screen edge if not desired, 
+
+          {/* Outro space to ensure the last card isn't completely flush with the screen edge if not desired,
               but since we use exact calc, a small padding element works well */}
           <div className="w-[10vw] flex-shrink-0" />
         </motion.div>
@@ -67,7 +67,7 @@ export function ProgressSection() {
         <div className="flex flex-col gap-12 mt-4">
           {progressCards.map((card) => (
             <ProgressCard
-              key={`mobile-${card.id}`} 
+              key={`mobile-${card.id}`}
               card={card}
               className="w-full"
             />
@@ -131,7 +131,7 @@ function ProgressCard({ card, className }: { card: ProgressCardContent; classNam
       </motion.div>
 
       {/* Right: Content */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-10%" }}
@@ -147,7 +147,7 @@ function ProgressCard({ card, className }: { card: ProgressCardContent; classNam
           </div>
         </div>
 
-        <h3 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.05] text-[#FAFAFA] mb-6 tracking-[-0.01em] drop-shadow-md">
+        <h3 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.05] text-[#FAFAFA] mb-6 tracking-[-0.01em] drop-shadow-md text-pretty">
           {card.title}
         </h3>
 

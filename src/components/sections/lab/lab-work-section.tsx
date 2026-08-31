@@ -4,17 +4,17 @@ export function LabWorkSection() {
   return (
     <section className="relative w-full bg-[var(--background)] pb-24 md:pb-32 z-10">
       <div className="w-full max-w-[1200px] px-6 md:px-12 mx-auto flex flex-col">
-        
+
         {/* Section Header */}
         <div className="w-full flex items-center justify-between mb-16">
           <h2 className="font-[family-name:var(--font-oliveira)] text-[#FAFAFA] text-lg tracking-wide uppercase">
             02 / Lab Work
           </h2>
         </div>
-        
+
         {/* Lab Items Container */}
         <div className="flex flex-col gap-12 md:gap-16">
-          
+
           {/* ITEM 1: BASELINE A1 */}
           <div className="w-full flex flex-col border border-white/10 rounded-2xl overflow-hidden group hover:border-white/20 transition-colors duration-500">
             {/* Top section (Split) */}
@@ -36,7 +36,7 @@ export function LabWorkSection() {
                    A controlled baseline measuring browser capture, WebM/Opus chunking, transport and server processing before introducing speech or model inference.
                  </p>
                </div>
-               
+
                {/* Right Metrics */}
                <div className="w-full md:w-2/5 flex flex-col">
                  <div className="flex-1 p-8 md:p-12 border-b border-white/10 flex flex-col justify-center">
@@ -57,17 +57,17 @@ export function LabWorkSection() {
                  </div>
                </div>
             </div>
-            
+
             {/* Bottom Bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 md:px-12 md:py-6 bg-white/[0.02]">
               <span className="font-mono text-[#666] text-[10px] md:text-xs tracking-[0.15em] uppercase mb-4 sm:mb-0">
                 48 kHz · Mono · WebM/Opus · ~8.3 chunks/s
               </span>
-              <Link 
-                href="/lab/001" 
+              <Link prefetch={true}
+                href="/lab/001"
                 className="flex items-center gap-3 font-[family-name:var(--font-oliveira)] text-[13px] text-[#FAFAFA] tracking-[0.15em] uppercase hover:text-[#A0A0A0] transition-colors"
               >
-                OPEN TECHNICAL REPORT 
+                OPEN TECHNICAL REPORT
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
@@ -81,7 +81,7 @@ export function LabWorkSection() {
                <div className="w-full p-8 md:p-12 relative overflow-hidden">
                  {/* Subtle glowing accent for "In Progress" status */}
                  <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-amber-900/10 blur-[80px] pointer-events-none rounded-full" />
-                 
+
                  <div className="flex items-center justify-between mb-8 relative z-10">
                    <span className="font-mono text-[#888] text-[10px] md:text-xs tracking-[0.2em] uppercase">
                      LAB / 002 — CONCURRENT EXECUTION
@@ -98,7 +98,7 @@ export function LabWorkSection() {
                  </p>
                </div>
             </div>
-            
+
             {/* Bottom Bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 md:px-12 md:py-6 bg-white/[0.02]">
               <span className="font-mono text-[#666] text-[10px] md:text-xs tracking-[0.15em] uppercase mb-4 sm:mb-0">

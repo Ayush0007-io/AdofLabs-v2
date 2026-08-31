@@ -9,14 +9,14 @@ import { homeLabs } from "@/content/home/labs";
 export function LabsSection() {
   return (
     <section className="relative z-10 w-full bg-[var(--background)] py-24 md:py-32 flex flex-col items-center">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="w-full max-w-[1200px] px-6 md:px-12 mb-16 md:mb-24"
       >
-        <h2 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-5xl text-[#FAFAFA] mb-6 tracking-tight">
+        <h2 className="font-[family-name:var(--font-oliveira)] text-3xl md:text-5xl text-[#FAFAFA] mb-6 tracking-tight text-pretty">
           Built, tested, and released from our research.
         </h2>
         <p className="text-[#A0A0A0] text-lg md:text-xl font-light leading-relaxed max-w-[600px]">
@@ -57,7 +57,7 @@ export function LabsSection() {
 
               {/* Right Column: Details */}
               <div className="w-full lg:w-3/4 flex flex-col">
-                <h3 className="font-[family-name:var(--font-oliveira)] text-2xl md:text-3xl lg:text-4xl text-[#FAFAFA] mb-6 leading-tight">
+                <h3 className="font-[family-name:var(--font-oliveira)] text-2xl md:text-3xl lg:text-4xl text-[#FAFAFA] mb-6 leading-tight text-pretty">
                   {lab.title}
                 </h3>
 
@@ -97,7 +97,7 @@ export function LabsSection() {
                   {lab.report && (
                     <Link
                       href={lab.report.href}
-                      className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-[#FAFAFA] hover:text-[#A0A0A0] transition-colors uppercase group/link"
+                      className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-[#FAFAFA] hover:text-[#A0A0A0] transition-colors uppercase group/link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F0F0F] rounded-sm"
                     >
                       {lab.report.label}
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover/link:translate-x-1">

@@ -54,7 +54,7 @@ export function ScrollReveal({ text, children, className }: ScrollRevealProps) {
         const start = (i / words.length) * 0.8;
         // Each word takes 20% of the total scroll distance to fully appear
         const end = start + 0.2;
-        
+
         return (
           <Word
             key={i}

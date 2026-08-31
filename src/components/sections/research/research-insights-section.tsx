@@ -16,7 +16,7 @@ const ctaLabels: Record<string, string> = {
 export function ResearchInsightsSection() {
   return (
     <section className="relative z-10 w-full bg-[var(--background)] py-24 md:py-32 flex flex-col items-center">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
@@ -35,9 +35,9 @@ export function ResearchInsightsSection() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link 
-              href="#"
-              className="flex flex-col group cursor-pointer h-full"
+            <Link prefetch={true}
+              href={article.isAvailable ? `/research/insights/${article.slug}` : "#"}
+              className={`flex flex-col group h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-8 focus-visible:ring-offset-[#0F0F0F] rounded-2xl ${article.isAvailable ? 'cursor-pointer' : 'cursor-default'}`}
             >
             {/* Image with Bottom Fade */}
             <div className="relative w-full aspect-[4/3] mb-6 rounded-t-2xl rounded-b-lg overflow-hidden">
@@ -45,7 +45,7 @@ export function ResearchInsightsSection() {
                 src={article.image}
                 alt={article.title}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className={`object-cover transition-transform duration-700 ${article.isAvailable ? 'group-hover:scale-105' : ''}`}
               />
               {/* Gradient matching the section background to create the seamless fade effect at the bottom */}
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/80 to-transparent z-10 pointer-events-none" />
@@ -56,15 +56,15 @@ export function ResearchInsightsSection() {
               <span className="text-[#888888] text-xs font-bold tracking-widest uppercase mb-3">
                 {article.id} — {article.type}
               </span>
-              <h3 className="font-[family-name:var(--font-oliveira)] text-[#FAFAFA] text-2xl font-medium leading-tight mb-4 group-hover:text-[#A0A0A0] transition-colors duration-300">
+              <h3 className={`font-[family-name:var(--font-oliveira)] text-[#FAFAFA] text-2xl font-medium leading-tight mb-4 transition-colors duration-300 text-pretty ${article.isAvailable ? 'group-hover:text-[#A0A0A0]' : ''}`}>
                 {article.title}
               </h3>
               <p className="text-[#A0A0A0] text-sm leading-relaxed font-light mb-6">
                 {article.summary}
               </p>
               <div className="mt-auto mb-2">
-                <span className="text-xs font-bold tracking-widest text-[#FAFAFA] group-hover:text-[#A0A0A0] transition-colors duration-300 uppercase">
-                  {ctaLabels[article.type]}
+                <span className={`text-xs font-bold tracking-widest uppercase transition-colors duration-300 ${article.isAvailable ? 'text-[#FAFAFA] group-hover:text-[#A0A0A0]' : 'text-[#666]'}`}>
+                  {article.isAvailable ? ctaLabels[article.type] : "COMING SOON"}
                 </span>
               </div>
             </div>
@@ -74,19 +74,19 @@ export function ResearchInsightsSection() {
       </div>
 
       <div className="mt-16">
-        <Link 
+        <Link prefetch={true}
           href="/research"
-          className="group inline-flex items-center gap-3 bg-white text-black h-[48px] md:h-[52px] px-6 md:px-8 rounded-full font-[family-name:var(--font-oliveira)] text-[14px] md:text-[15px] font-medium tracking-wide hover:bg-[#e0e0e0] transition-colors duration-[250ms] ease-[cubic-bezier(0.25,1,0.5,1)]"
+          className="group inline-flex items-center gap-3 bg-white text-black h-[48px] md:h-[52px] px-6 md:px-8 rounded-full font-[family-name:var(--font-oliveira)] text-[14px] md:text-[15px] font-medium tracking-wide hover:bg-[#e0e0e0] transition-colors duration-[250ms] ease-[cubic-bezier(0.25,1,0.5,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         >
           READ MORE
-          <svg 
-            width="18" 
-            height="18" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
             strokeLinejoin="round"
             className="transition-transform duration-[250ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1"
           >

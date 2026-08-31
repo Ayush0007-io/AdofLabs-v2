@@ -30,7 +30,7 @@ export const homeLabs = [
     id: "002",
     tag: "LAB / 002 — CONCURRENT EXECUTION",
     title: "Keeping interaction alive while actions execute.",
-    description: "We’re testing whether speech, state updates and tool execution can run concurrently instead of forcing the system into a sequential listen → reason → act → wait → respond pipeline. The goal is to keep the interaction responsive while work continues in the background, without losing state or execution context and we are in working we didnt invent numbers yet",
+    description: "We’re testing whether speech, state updates and tool execution can run concurrently instead of forcing the system into a sequential listen → reason → act → wait → respond pipeline. The goal is to keep the interaction responsive while work continues in the background, without losing state or execution context.",
     results: [],
     specs: "Concurrent pipeline · Background execution · Stateful context",
     image: "/images/bg 2.png",

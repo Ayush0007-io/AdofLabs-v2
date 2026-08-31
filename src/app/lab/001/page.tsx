@@ -57,18 +57,18 @@ export default function Lab001Report() {
   return (
     <main className="w-full bg-[#050505] text-[#F5F5F5] min-h-screen pt-32 md:pt-48 pb-24 font-sans selection:bg-white/20">
       <article className="max-w-[1180px] mx-auto px-6 lg:px-12">
-        
+
         {/* HERO */}
         <header className="mb-32">
           <div className="font-mono text-xs text-[#A3A3A3] uppercase tracking-widest mb-12 flex justify-between max-w-[992px]">
             <span>LAB / 001</span>
             <span>REALTIME SYSTEMS · AUGUST 2026</span>
           </div>
-          
+
           <h1 className="font-[family-name:var(--font-oliveira)] text-4xl md:text-6xl leading-[1.1] mb-8 max-w-[800px] text-white">
             Measuring the real-time speech stack, layer by layer.
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-[#A3A3A3] font-light leading-relaxed max-w-[800px] mb-16">
             From browser-level instrumentation to a measured progressive speech control — and the architectural questions it exposed.
           </p>
@@ -154,7 +154,7 @@ export default function Lab001Report() {
           <p className="mb-6">
             This immediately exposed a basic but important measurement problem:
           </p>
-          
+
           <div className="my-12">
             <BlockMath math="\text{browser clock} \neq \text{server clock}" />
           </div>
@@ -172,7 +172,7 @@ export default function Lab001Report() {
           </div>
 
           <p className="mb-6">For one representative transport observation:</p>
-          
+
           <div className="my-10">
             <BlockMath math="L_{\text{outside}} = 98.0 - 18.7 = 79.3\text{ ms}" />
           </div>
@@ -189,13 +189,13 @@ export default function Lab001Report() {
             <svg viewBox="0 0 800 220" className="w-full text-white font-mono text-xs" stroke="currentColor" fill="none">
               <text x="400" y="20" textAnchor="middle" fill="#A3A3A3">independent timing domains</text>
               <line x1="400" y1="30" x2="400" y2="180" stroke="#242424" strokeDasharray="4 4" />
-              
+
               <text x="200" y="40" textAnchor="middle" fill="white" className="font-bold tracking-widest uppercase">BROWSER</text>
               <text x="600" y="40" textAnchor="middle" fill="white" className="font-bold tracking-widest uppercase">SERVER</text>
 
               <text x="100" y="70" textAnchor="middle" fill="#A3A3A3">microphone</text>
               <line x1="100" y1="80" x2="100" y2="100" stroke="#555" markerEnd="url(#arrow)" />
-              
+
               <text x="600" y="70" textAnchor="middle" fill="#A3A3A3">request received</text>
               <line x1="600" y1="80" x2="600" y2="100" stroke="#555" markerEnd="url(#arrow)" />
 
@@ -205,12 +205,12 @@ export default function Lab001Report() {
               <line x1="220" y1="110" x2="260" y2="110" stroke="#555" />
               <text x="280" y="115" textAnchor="middle" fill="white">request</text>
               <line x1="310" y1="110" x2="550" y2="110" stroke="#555" />
-              
+
               <text x="600" y="115" textAnchor="middle" fill="white">processing</text>
-              
+
               <line x1="280" y1="125" x2="280" y2="145" stroke="#555" />
               <line x1="600" y1="125" x2="600" y2="145" stroke="#555" />
-              
+
               <line x1="580" y1="150" x2="330" y2="150" stroke="#555" markerEnd="url(#arrow)" />
               <text x="455" y="145" textAnchor="middle" fill="#A3A3A3">response</text>
               <line x1="280" y1="145" x2="280" y2="150" stroke="#555" />
@@ -227,7 +227,7 @@ export default function Lab001Report() {
               <line x1="560" y1="175" x2="560" y2="185" stroke="#A3A3A3" />
               <line x1="640" y1="175" x2="640" y2="185" stroke="#A3A3A3" />
               <text x="600" y="195" textAnchor="middle" fill="#A3A3A3">measured server</text>
-              
+
               <defs>
                 <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#555" stroke="none" />
@@ -346,10 +346,10 @@ FINAL / NOT FINAL
               B0 / SERIAL CONTROL<br /><br />FIGURE 03 — FIRST INTEGRATED PATH
             </div>
             <svg viewBox="0 0 300 420" className="text-white font-mono text-xs w-[300px]" stroke="currentColor" fill="none">
-              
+
               <rect x="50" y="0" width="200" height="30" stroke="#555" fill="#0A0A0A" />
               <text x="150" y="18" textAnchor="middle" fill="white">AUDIO CAPTURE</text>
-              
+
               <line x1="150" y1="30" x2="150" y2="50" stroke="#555" markerEnd="url(#arrow)" />
 
               <rect x="50" y="50" width="200" height="30" stroke="#555" strokeDasharray="4 4" fill="transparent" />
@@ -388,7 +388,7 @@ FINAL / NOT FINAL
           </div>
 
           <p className="mb-6">The implementation was intentionally ordinary. Its purpose was measurement.</p>
-          
+
           <blockquote className="border-l-2 border-[#242424] pl-6 py-2 my-8 text-xl font-[family-name:var(--font-oliveira)] text-[#A3A3A3]">
             Without a measurable control system, an architectural improvement is difficult to distinguish from a different workload, provider state or measurement boundary.
           </blockquote>
@@ -410,14 +410,14 @@ FINAL / NOT FINAL
           <div className="mb-12 border border-[#242424] bg-[#0A0A0A] p-8 overflow-x-auto hidden md:block">
             <div className="text-xs font-mono text-[#A3A3A3] tracking-widest uppercase mb-12">FIGURE 04 — SAME REQUEST, DIFFERENT COMPUTE POLICY</div>
             <svg viewBox="0 0 800 200" className="w-full text-white font-mono text-xs" stroke="currentColor" fill="none">
-              
+
               <text x="20" y="20" fill="white" className="uppercase font-bold">DEFAULT</text>
               <text x="20" y="50" fill="#A3A3A3">0 ms</text>
               <text x="600" y="50" fill="#A3A3A3" textAnchor="end">~2 s</text>
 
               <rect x="20" y="60" width="580" height="30" stroke="#555" fill="#111" />
               <text x="310" y="78" textAnchor="middle" fill="#A3A3A3">hidden computation</text>
-              
+
               <rect x="600" y="60" width="100" height="30" fill="white" stroke="none" />
               <text x="650" y="78" textAnchor="middle" fill="black">RESPONSE</text>
 
@@ -427,7 +427,7 @@ FINAL / NOT FINAL
 
               <rect x="20" y="170" width="220" height="30" stroke="#555" fill="#111" />
               <text x="130" y="188" textAnchor="middle" fill="#A3A3A3">necessary processing</text>
-              
+
               <rect x="240" y="170" width="100" height="30" fill="white" stroke="none" />
               <text x="290" y="188" textAnchor="middle" fill="black">RESPONSE</text>
             </svg>
@@ -527,30 +527,30 @@ FINAL / NOT FINAL
           <div className="mb-12 border border-[#242424] bg-[#0A0A0A] p-8 overflow-x-auto hidden md:block">
             <div className="text-xs font-mono text-[#A3A3A3] tracking-widest uppercase mb-12">FIGURE 05 — BATCH VS PROGRESSIVE GENERATION</div>
             <svg viewBox="0 0 800 160" className="w-full text-white font-mono text-xs" stroke="currentColor" fill="none">
-              
+
               <text x="20" y="20" fill="white" className="uppercase font-bold">BATCH</text>
-              
+
               <text x="20" y="60" fill="#A3A3A3">TEXT</text>
               <line x1="60" y1="56" x2="80" y2="56" stroke="#555" markerEnd="url(#arrow)" />
-              
+
               <rect x="100" y="46" width="300" height="20" fill="white" stroke="none" />
-              
+
               <line x1="420" y1="56" x2="440" y2="56" stroke="#555" markerEnd="url(#arrow)" />
               <text x="460" y="60" fill="white" className="font-bold">PLAY</text>
-              
+
               <text x="250" y="85" textAnchor="middle" fill="#A3A3A3">complete waveform first</text>
 
               <text x="20" y="130" fill="white" className="uppercase font-bold">PROGRESSIVE</text>
-              
+
               <text x="20" y="160" fill="#A3A3A3">TEXT</text>
               <line x1="60" y1="156" x2="80" y2="156" stroke="#555" markerEnd="url(#arrow)" />
-              
+
               <rect x="100" y="146" width="40" height="20" fill="white" stroke="none" />
               <line x1="145" y1="156" x2="160" y2="156" stroke="#555" markerEnd="url(#arrow)" />
-              
+
               <rect x="170" y="146" width="40" height="20" fill="white" stroke="none" />
               <line x1="215" y1="156" x2="230" y2="156" stroke="#555" markerEnd="url(#arrow)" />
-              
+
               <rect x="240" y="146" width="40" height="20" fill="white" stroke="none" />
               <line x1="285" y1="156" x2="300" y2="156" stroke="#555" markerEnd="url(#arrow)" />
 
@@ -584,7 +584,7 @@ FINAL / NOT FINAL
           <p className="mb-6">
             The first integrated progressive-audio design contained another potential serial step:
           </p>
-          
+
           <pre className="bg-[#0A0A0A] border border-[#242424] p-6 text-sm text-[#A3A3A3] overflow-x-auto mb-10 font-mono w-max">
 {`GENERATED AUDIO
       ↓
@@ -606,10 +606,10 @@ BROWSER`}
               FIGURE 06 — PROGRESSIVE AUDIO CONTROL
             </div>
             <svg viewBox="0 0 300 420" className="text-white font-mono text-xs w-[300px]" stroke="currentColor" fill="none">
-              
+
               <rect x="50" y="0" width="200" height="30" stroke="#555" fill="#0A0A0A" />
               <text x="150" y="18" textAnchor="middle" fill="white">SPEECH GENERATOR</text>
-              
+
               <line x1="150" y1="30" x2="150" y2="100" stroke="#555" markerEnd="url(#arrow)" />
               <rect x="150" y="55" width="130" height="20" fill="#0A0A0A" stroke="none" />
               <text x="215" y="68" textAnchor="middle" fill="#A3A3A3">progressive PCM</text>
@@ -654,7 +654,7 @@ BROWSER`}
           <p className="mb-6">
             After integrating progressive speech delivery and explicit browser playback scheduling, three frozen smoke sessions produced the following observations.
           </p>
-          
+
           <div className="mt-12 border border-[#242424] bg-[#0A0A0A] p-8 mb-12">
             <h3 className="text-xs font-mono text-[#A3A3A3] tracking-widest uppercase mb-6">EXPERIMENT B3</h3>
             <div className="w-full overflow-x-auto">
@@ -705,7 +705,7 @@ BROWSER`}
                 </tbody>
               </table>
             </div>
-            
+
             <div className="mt-8 pt-6 border-t border-[#242424] flex items-center justify-between font-mono text-xs uppercase tracking-widest">
               <span className="text-[#A3A3A3]">STATUS</span>
               <span className="text-white">B3_FAST_LOOP_PASS / FROZEN CONTROL</span>
@@ -735,16 +735,16 @@ native realtime architecture      NO`}
         {/* 08 THE PATTERN */}
         <Section num="08" title="The pattern across the experiments">
           <p className="mb-6">The progression looks simple when reduced to its important decisions.</p>
-          
+
           <div className="mb-12 border border-[#242424] bg-[#0A0A0A] p-8 overflow-x-auto hidden md:flex flex-col items-center">
             <div className="text-xs font-mono text-[#A3A3A3] tracking-widest uppercase mb-12 w-full text-left">
               FIGURE 07 — WHAT ACTUALLY CHANGED
             </div>
             <svg viewBox="0 0 400 380" className="text-white font-mono text-xs w-[400px]" stroke="currentColor" fill="none">
-              
+
               <text x="50" y="20" fill="#A3A3A3" className="font-bold">B0</text>
               <text x="50" y="35" fill="white">SERIAL CONTROL</text>
-              
+
               <line x1="80" y1="45" x2="80" y2="105" stroke="#555" markerEnd="url(#arrow)" />
               <text x="95" y="80" fill="#A3A3A3">remove unnecessary reasoning</text>
 
@@ -821,7 +821,7 @@ native realtime architecture      NO`}
             <svg viewBox="0 0 300 400" className="text-white font-mono text-xs w-[300px]" stroke="currentColor" fill="none">
               <text x="150" y="20" textAnchor="middle" fill="#A3A3A3">USER SPEECH</text>
               <rect x="50" y="30" width="200" height="15" fill="white" stroke="none" />
-              
+
               <line x1="150" y1="50" x2="150" y2="90" stroke="#555" markerEnd="url(#arrow)" />
               <text x="150" y="75" textAnchor="middle" fill="#A3A3A3" className="bg-[#0A0A0A]">utterance end</text>
 
@@ -830,7 +830,7 @@ native realtime architecture      NO`}
 
               <text x="150" y="190" textAnchor="middle" fill="white">full cognition</text>
               <line x1="150" y1="200" x2="150" y2="240" stroke="#555" markerEnd="url(#arrow)" />
-              
+
               <text x="150" y="265" textAnchor="middle" fill="#A3A3A3" className="bg-[#0A0A0A]">speech begins</text>
               <rect x="150" y="280" width="100" height="15" fill="white" stroke="none" />
               <polygon points="250,280 260,287.5 250,295" fill="white" />
@@ -942,13 +942,13 @@ native realtime architecture      NO`}
           <p className="mb-6">
             The conceptual direction is therefore different from simply running every stage faster.
           </p>
-          
+
           <div className="mb-12 border border-[#242424] bg-[#0A0A0A] p-8 overflow-x-auto hidden md:flex flex-col items-center">
             <div className="text-xs font-mono text-[#A3A3A3] tracking-widest uppercase mb-12 w-full text-left">
               FIGURE 09 — CURRENT RESEARCH DIRECTION
             </div>
             <svg viewBox="0 0 600 350" className="text-white font-mono text-xs w-[600px]" stroke="currentColor" fill="none">
-              
+
               <text x="300" y="20" textAnchor="middle" fill="white" className="font-bold">CONTINUOUS INPUT</text>
               <line x1="300" y1="30" x2="300" y2="60" stroke="#555" />
               <line x1="150" y1="60" x2="450" y2="60" stroke="#555" />
@@ -957,7 +957,7 @@ native realtime architecture      NO`}
 
               <text x="150" y="115" textAnchor="middle" fill="white">INTERACTION STATE</text>
               <text x="150" y="130" textAnchor="middle" fill="#A3A3A3">continuous / cheap</text>
-              
+
               <text x="450" y="115" textAnchor="middle" fill="white">SEMANTIC STATE</text>
               <text x="450" y="130" textAnchor="middle" fill="#A3A3A3">evolving meaning</text>
 
@@ -965,20 +965,20 @@ native realtime architecture      NO`}
               <line x1="450" y1="145" x2="450" y2="175" stroke="#555" />
               <line x1="150" y1="175" x2="450" y2="175" stroke="#555" />
               <line x1="300" y1="175" x2="300" y2="195" stroke="#555" />
-              
+
               <rect x="230" y="195" width="140" height="20" fill="#0A0A0A" stroke="none" />
               <text x="300" y="210" textAnchor="middle" fill="#A3A3A3">event detected</text>
               <line x1="300" y1="215" x2="300" y2="240" stroke="#555" />
-              
+
               <line x1="200" y1="240" x2="400" y2="240" stroke="#555" />
               <line x1="200" y1="240" x2="200" y2="260" stroke="#555" markerEnd="url(#arrow)" />
               <line x1="400" y1="240" x2="400" y2="260" stroke="#555" markerEnd="url(#arrow)" />
 
               <text x="200" y="280" textAnchor="middle" fill="white">LOCAL UPDATE</text>
-              
+
               <text x="400" y="280" textAnchor="middle" fill="white">GLOBAL COGNITION</text>
               <text x="400" y="295" textAnchor="middle" fill="#A3A3A3">when needed</text>
-              
+
               <line x1="400" y1="305" x2="400" y2="330" stroke="#555" markerEnd="url(#arrow)" />
               <text x="400" y="345" textAnchor="middle" fill="white">THINK / PLAN</text>
             </svg>
@@ -1055,7 +1055,7 @@ PROVISIONAL STATE
           <p className="mb-6">
             The current research branch compares different policies for maintaining state across an incremental conversational stream. The public version does not need to reveal the complete benchmark corpus. A representative conceptual sequence is enough:
           </p>
-          
+
           <pre className="bg-[#0A0A0A] border border-[#242424] p-6 text-sm text-[#A3A3A3] overflow-x-auto mb-10 font-mono w-max">
 {`Rahul
    ↓
@@ -1106,7 +1106,7 @@ CANCEL`}
             <BlockMath math="GIR = \frac{N_{\text{global}}}{N_{\text{updates}}}" />
           </div>
           <p className="mb-6">where <InlineMath math="GIR" /> is the <strong>Global Invocation Ratio</strong>.</p>
-          
+
           <p className="mb-6">
             Lower is not automatically better. A system that never invokes expensive cognition but continually loses meaning is useless. So compute has to be measured jointly with quality:
           </p>
@@ -1122,13 +1122,13 @@ CANCEL`}
 
         {/* 14 WHAT WE LEARNED */}
         <Section num="14" title="What we learned">
-          
+
           <div className="mb-12 border-b border-[#242424] pb-12">
             <h4 className="text-[#A3A3A3] font-mono tracking-widest mb-4">01</h4>
             <h3 className="text-2xl font-[family-name:var(--font-oliveira)] text-white mb-4">Measure the boundary before optimizing it.</h3>
             <p className="text-[#A3A3A3]">Several apparently obvious latency numbers changed meaning once the exact start and end events were examined.</p>
           </div>
-          
+
           <div className="mb-12 border-b border-[#242424] pb-12">
             <h4 className="text-[#A3A3A3] font-mono tracking-widest mb-4">02</h4>
             <h3 className="text-2xl font-[family-name:var(--font-oliveira)] text-white mb-4">Lower latency can produce lower correctness.</h3>
@@ -1193,7 +1193,7 @@ CANCEL`}
         <section className="mb-24">
           <h2 className="text-xl font-[family-name:var(--font-oliveira)] text-white mb-8">Scope of this report</h2>
           <p className="mb-8 text-[#A3A3A3]">This report intentionally documents <strong>results and engineering reasoning</strong>, not the complete implementation.</p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 font-mono text-sm">
             <div>
               <div className="text-white mb-6 uppercase tracking-widest">Publicly useful</div>

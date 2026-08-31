@@ -4,9 +4,9 @@ export function ProgressLogSection() {
   return (
     <section className="relative w-full bg-[var(--background)] pb-24 md:pb-40 z-10">
       <div className="w-full max-w-[1200px] px-6 md:px-12 mx-auto">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-          
+
           {/* STICKY SIDEBAR (Left on desktop, hidden on mobile for cleaner flow) */}
           <div className="hidden lg:flex lg:col-span-4 flex-col relative">
             <div className="sticky top-40 flex flex-col gap-12">
@@ -27,7 +27,7 @@ export function ProgressLogSection() {
 
           {/* MAIN CONTENT AREA */}
           <div className="col-span-1 lg:col-span-8 flex flex-col gap-32">
-            
+
             {/* 01 R&D PROGRESS */}
             <div className="flex flex-col">
               <div className="mb-16">
@@ -42,14 +42,14 @@ export function ProgressLogSection() {
 
               {/* Timeline Container */}
               <div className="relative border-l border-white/10 ml-4 md:ml-6 pl-8 md:pl-12 flex flex-col gap-24 py-8">
-                
+
                 {/* Item A1 */}
                 <div className="relative">
                   {/* Timeline Node */}
                   <div className="absolute -left-[41px] md:-left-[57px] top-1 w-5 h-5 rounded-full bg-[var(--background)] border-2 border-white/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-white/60" />
                   </div>
-                  
+
                   <div className="flex flex-col">
                     <span className="font-mono text-[#888] text-[10px] tracking-[0.2em] uppercase mb-4">
                       BASELINE A1 · ESTABLISHED
@@ -65,7 +65,7 @@ export function ProgressLogSection() {
                         98.0 ms best observed round-trip · 18.7 ms server processing
                       </code>
                     </div>
-                    <Link href="/lab/001" className="flex items-center gap-3 font-[family-name:var(--font-oliveira)] text-sm text-[#FAFAFA] tracking-widest uppercase hover:text-[#A0A0A0] transition-colors group">
+                    <Link prefetch={true} href="/lab/001" className="flex items-center gap-3 font-[family-name:var(--font-oliveira)] text-sm text-[#FAFAFA] tracking-widest uppercase hover:text-[#A0A0A0] transition-colors group">
                       VIEW PROGRESS
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </Link>
@@ -78,7 +78,7 @@ export function ProgressLogSection() {
                   <div className="absolute -left-[41px] md:-left-[57px] top-1 w-5 h-5 rounded-full bg-[var(--background)] border-2 border-amber-500/50 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
                   </div>
-                  
+
                   <div className="flex flex-col">
                     <span className="font-mono text-amber-500/80 text-[10px] tracking-[0.2em] uppercase mb-4">
                       BASELINE A2 · IN PROGRESS
@@ -94,7 +94,7 @@ export function ProgressLogSection() {
                         260.5 ms first instrumented audio-to-transcript round-trip
                       </code>
                     </div>
-                    <Link href="#" className="flex items-center gap-3 font-[family-name:var(--font-oliveira)] text-sm text-[#FAFAFA] tracking-widest uppercase hover:text-[#A0A0A0] transition-colors group">
+                    <Link prefetch={true} href="#" className="flex items-center gap-3 font-[family-name:var(--font-oliveira)] text-sm text-[#FAFAFA] tracking-widest uppercase hover:text-[#A0A0A0] transition-colors group">
                       VIEW CURRENT WORK
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </Link>

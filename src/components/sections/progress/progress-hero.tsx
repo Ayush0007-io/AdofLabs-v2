@@ -12,7 +12,7 @@ export function ProgressHero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-[700px] mx-auto flex flex-col items-center"
         >
-          <h1 
+          <h1
             className="text-[var(--foreground)] font-[family-name:var(--font-oliveira)] font-light tracking-[-0.02em] text-center w-full"
             style={{ fontSize: 'clamp(36px, 8vw, 72px)', lineHeight: '1.1' }}
           >

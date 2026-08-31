@@ -20,7 +20,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
+
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 0);
 
@@ -89,7 +89,7 @@ export function SiteHeader() {
 
         {/* DESKTOP — RESTORE ORIGINAL WORKING DESIGN */}
         <div className={styles.desktopHeader}>
-          <Link href="/" className={styles.desktopLogo}>
+          <Link prefetch={true} href="/" className={styles.desktopLogo}>
             <img src="/adoflogo (1).svg" alt="AdofLabs" />
           </Link>
 
@@ -99,6 +99,7 @@ export function SiteHeader() {
           >
             {NAV_LINKS.map((link) => (
               <Link
+                prefetch={true}
                 key={link.href}
                 href={link.href}
                 className={styles.desktopNavLink}
@@ -108,7 +109,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <Link href="/join" className={styles.desktopCta}>
+          <Link prefetch={true} href="/join" className={styles.desktopCta}>
             <span>JOIN THE MISSION</span>
             <span>→</span>
           </Link>
